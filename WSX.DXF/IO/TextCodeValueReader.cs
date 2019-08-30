@@ -1,0 +1,148 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+
+namespace WSX.DXF.IO
+{
+    internal class TextCodeValueReader :
+        ICodeValueReader
+    {
+        #region private fields
+
+        private readonly TextReader reader;
+        private short code;
+        private string value;
+        private long currentPosition;
+
+        #endregion
+
+        #region constructors
+
+        public TextCodeValueReader(TextReader reader)
+        {
+            this.reader = reader;
+            this.code = 0;
+            this.value = null;
+            this.currentPosition = 0;
+        }
+
+        #endregion
+
+        #region public properties
+
+        public short Code
+        {
+            get { return this.code; }
+        }
+
+        public object Value
+        {
+            get { return this.value; }
+        }
+
+        public long CurrentPosition
+        {
+            get { return this.currentPosition; }
+        }
+        #endregion
+
+        #region public methods
+
+        public void Next()
+        {
+            string readCode = this.reader.ReadLine();
+            this.currentPosition += 1;
+            if (!short.TryParse(readCode, NumberStyles.Integer, CultureInfo.InvariantCulture, out this.code))
+                throw new Exception(string.Format("Code {0} not valid at line {1}", this.code, this.currentPosition));
+            this.value = this.reader.ReadLine();
+            this.currentPosition += 1;
+        }
+
+        public byte ReadByte()
+        {
+            byte result;
+            if (byte.TryParse(this.value, NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite, CultureInfo.InvariantCulture, out result))
+                return result;
+
+            throw new Exception(string.Format("Value {0} not valid at line {1}", this.value, this.currentPosition));
+        }
+
+        public byte[] ReadBytes()
+        {
+            List<byte> bytes = new List<byte>();
+            for (int i = 0; i < this.value.Length; i++)
+            {
+                string hex = string.Concat(this.value[i], this.value[++i]);
+                byte result;
+                if (byte.TryParse(hex, NumberStyles.AllowHexSpecifier | NumberStyles.AllowLeadingWhite | NumberStyles.AllowTrailingWhite, CultureInfo.InvariantCulture, out result))
+                    bytes.Add(result);
+                else
+                    throw new Exception(string.Format("Value {0} not valid at line {1}", hex, this.currentPosition));
+            }
+            return bytes.ToArray();
+        }
+
+        public short ReadShort()
+        {
+            short result;
+            if (short.TryParse(this.value, NumberStyles.Integer, CultureInfo.InvariantCulture, out result))
+                return result;
+
+            throw new Exception(string.Format("Value {0} not valid at line {1}", this.value, this.currentPosition));
+        }
+
+        public int ReadInt()
+        {
+            int result;
+            if (int.TryParse(this.value, NumberStyles.Integer, CultureInfo.InvariantCulture, out result))
+                return result;
+
+            throw new Exception(string.Format("Value {0} not valid at line {1}", this.value, this.currentPosition));
+        }
+
+        public long ReadLong()
+        {
+            long result;
+            if (long.TryParse(this.value, NumberStyles.Integer, CultureInfo.InvariantCulture, out result))
+                return result;
+
+            throw new Exception(string.Format("Value {0} not valid at line {1}", this.value, this.currentPosition));
+        }
+
+        public bool ReadBool()
+        {
+            byte result = this.ReadByte();
+            return result > 0;
+        }
+
+        public double ReadDouble()
+        {
+            double result;
+            if (double.TryParse(this.value, NumberStyles.Float, CultureInfo.InvariantCulture, out result))
+                return result;
+
+            throw new Exception(string.Format("Value {0} not valid at line {1}", this.value, this.currentPosition));
+        }
+
+        public string ReadString()
+        {
+            return this.value;
+        }
+
+        public string ReadHex()
+        {
+            long test;
+            if (long.TryParse(this.value, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out test))
+                return test.ToString("X");
+
+            throw new Exception(string.Format("Value {0} not valid at line {1}", this.value, this.currentPosition));
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}:{1}", this.code, this.value);
+        }
+        #endregion      
+    }
+}

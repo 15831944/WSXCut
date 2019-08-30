@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A28D6E9-1A03-4594-ACC6-810CE6078CE6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WSX.Hardware</RootNamespace>
+    <AssemblyName>WSX.Hardware.Ethernet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;BIG_ENDIAN_1</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE;BIG_ENDIAN_1</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternPackage\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Protocol.cs" />
+    <Compile Include="Common\TcpClientStream.cs" />
+    <Compile Include="Common\Requestor.cs" />
+    <Compile Include="Common\Responder.cs" />
+    <Compile Include="IO\DummyIO.cs" />
+    <Compile Include="Laser\DummyLaser.cs" />
+    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Models\EnumModels.cs" />
+    <Compile Include="Motor\MotorUtil.cs" />
+    <Compile Include="IO\IAssistantIO.cs" />
+    <Compile Include="IO\IOController.cs" />
+    <Compile Include="Laser\LaserControllerFactory.cs" />
+    <Compile Include="Models\LaserModels.cs" />
+    <Compile Include="Laser\RaycusLaserController.cs" />
+    <Compile Include="Laser\SerialPortStream.cs" />
+    <Compile Include="Laser\ILaser.cs" />
+    <Compile Include="Laser\LaserController.cs" />
+    <Compile Include="Models\ResetParameter.cs" />
+    <Compile Include="Motor\DummyMotorController.cs" />
+    <Compile Include="Motor\IMotorController.cs" />
+    <Compile Include="Motor\MotorController.cs" />
+    <Compile Include="Motor\MotorInfoManager.cs" />
+    <Compile Include="Models\MotorModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSX.CommomModel\WSX.CommomModel.csproj">
+      <Project>{6aa1e300-8783-4a86-a242-cdef7a8e4f1b}</Project>
+      <Name>WSX.CommomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Logger\WSX.Logger.csproj">
+      <Project>{7EE3268A-3F81-43DD-8026-6106A1008F66}</Project>
+      <Name>WSX.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

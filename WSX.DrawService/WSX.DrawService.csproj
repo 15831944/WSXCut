@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CEDAF2A-152C-4824-866B-075969170D8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WSX.DrawService</RootNamespace>
+    <AssemblyName>WSX.DrawService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE;HB_MODIFY</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CanvasControl\BoundingRectangleType.cs" />
+    <Compile Include="CanvasControl\CanvasWrapper.cs" />
+    <Compile Include="CanvasControl\DrawingPattern.cs" />
+    <Compile Include="CanvasControl\DrawObjectMouseDown.cs" />
+    <Compile Include="CanvasControl\ICanvas.cs" />
+    <Compile Include="CanvasControl\ICanvasLayer.cs" />
+    <Compile Include="CanvasControl\ICanvasOwner.cs" />
+    <Compile Include="CanvasControl\IDrawData.cs" />
+    <Compile Include="CanvasControl\IDrawObject.cs" />
+    <Compile Include="CanvasControl\IDrawTranslation.cs" />
+    <Compile Include="CanvasControl\IModel.cs" />
+    <Compile Include="CanvasControl\INodePoint.cs" />
+    <Compile Include="CanvasControl\ISnapPoint.cs" />
+    <Compile Include="CanvasControl\UCCanvas.Bridge.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CanvasControl\UCCanvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CanvasControl\UCCanvas.Designer.cs">
+      <DependentUpon>UCCanvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CanvasControl\UCCanvas.GeometryTranslate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataModel.cs" />
+    <Compile Include="Utils\ArrayAnnularHelper.cs" />
+    <Compile Include="Utils\ArrayFullHelper.cs" />
+    <Compile Include="Utils\ArrayInteractiveHelper.cs" />
+    <Compile Include="Utils\BridgeHelper.cs" />
+    <Compile Include="Utils\CommonSideHelper.cs" />
+    <Compile Include="Utils\FlyCutHelper.cs" />
+    <Compile Include="Utils\MeasureHelper.cs" />
+    <Compile Include="Utils\OverCutHelper.cs" />
+    <Compile Include="Utils\Undo\EditCommandArcFlyingCut.cs" />
+    <Compile Include="Utils\Undo\EditCommandArray.cs" />
+    <Compile Include="Utils\Undo\EditCommandBridge.cs" />
+    <Compile Include="Utils\Undo\EditCommandCommonSide.cs" />
+    <Compile Include="Utils\Undo\EditCommandGroupScatter.cs" />
+    <Compile Include="Utils\Undo\EditCommandGroup.cs" />
+    <Compile Include="Utils\Undo\EditCommandRoundAngle.cs" />
+    <Compile Include="Utils\Undo\EditCommandLineFlyingCut.cs" />
+    <Compile Include="Wrapper\DrawCommand.cs" />
+    <Compile Include="DrawModel\ArcLite.cs" />
+    <Compile Include="DrawModel\ArcModelMini.cs" />
+    <Compile Include="DrawModel\BezierLite.cs" />
+    <Compile Include="DrawModel\DotLite.cs" />
+    <Compile Include="DrawModel\IDrawLite.cs" />
+    <Compile Include="DrawModel\LineLite.cs" />
+    <Compile Include="DrawTool\Arcs\ArcBase.cs" />
+    <Compile Include="DrawTool\Arcs\ArcNodeType.cs" />
+    <Compile Include="DrawTool\Arcs\NodeArcPoint.cs" />
+    <Compile Include="DrawTool\Arcs\SweepArc.cs" />
+    <Compile Include="DrawTool\Arcs\ArcCurrentPointType.cs" />
+    <Compile Include="DrawTool\Arcs\ThreePointsArc.cs" />
+    <Compile Include="DrawTool\CircleTool\Circle.cs" />
+    <Compile Include="DrawTool\CircleTool\CircleNode.cs" />
+    <Compile Include="DrawTool\CircleTool\CircleNodeType.cs" />
+    <Compile Include="DrawTool\LeadLine\LeadLine.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\BulgeHelper.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiLine\LineCommon.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiLine\PolygonCommon.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiLine\PolyLine.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiLine\RectangleRound.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiLine\StarCommon.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiSegementLineCurrentPoint.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiSegementNodeType.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiSegmentLineBase.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\NodeMultisegment.cs" />
+    <Compile Include="DrawTool\MultiSegmentLine\MultiLine\RectangleCommon.cs" />
+    <Compile Include="DrawTool\SingleDot\NodePointSingleDot.cs" />
+    <Compile Include="DrawTool\SingleDot\SingleDot.cs" />
+    <Compile Include="Layers\LayerColors.cs" />
+    <Compile Include="Layers\MarkLayer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ColorHelper.cs" />
+    <Compile Include="Utils\CompensationHelper.cs" />
+    <Compile Include="Utils\DrawingOperationHelper.cs" />
+    <Compile Include="Utils\MicroConnectHelper.cs" />
+    <Compile Include="Utils\MirrorHelper.cs" />
+    <Compile Include="Utils\RotateAnyHelper.cs" />
+    <Compile Include="Utils\ScaleHelper.cs" />
+    <Compile Include="Utils\Undo\EditCommandAligment.cs" />
+    <Compile Include="Utils\Undo\EditCommandCompensation.cs" />
+    <Compile Include="Utils\Undo\EditCommandCornerRing.cs" />
+    <Compile Include="Utils\Undo\EditCommandMicroConnect.cs" />
+    <Compile Include="Utils\Undo\EditCommandMirror.cs" />
+    <Compile Include="Utils\Undo\EditCommandOverWelding.cs" />
+    <Compile Include="Utils\Undo\EditCommandReverseDirection.cs" />
+    <Compile Include="Utils\Undo\EditCommandRotate.cs" />
+    <Compile Include="Utils\Undo\EditCommandScale.cs" />
+    <Compile Include="Utils\Undo\EditCommandSetLeadwire.cs" />
+    <Compile Include="Utils\Undo\EditCommandSort.cs" />
+    <Compile Include="Wrapper\CanvasCommands.cs" />
+    <Compile Include="Wrapper\EventArgModels.cs" />
+    <Compile Include="Wrapper\DrawingComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wrapper\DrawingComponent.Designer.cs">
+      <DependentUpon>DrawingComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawTool\SnapPoint\IntersectSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\MidpointSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\NearestSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\CenterSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\DivisionSnapPoint.cs" />
+    <Compile Include="DrawTool\DrawObjectBase.cs" />
+    <Compile Include="DrawTool\DrawUtils.cs" />
+    <Compile Include="DrawTool\Arcs\IArc.cs" />
+    <Compile Include="DrawTool\SnapPoint\QuadrantSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\GridSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\PerpendicularSnapPoint.cs" />
+    <Compile Include="DrawTool\SnapPoint\SnapPointBase.cs" />
+    <Compile Include="DrawTool\SnapPoint\VertextSnapPoint.cs" />
+    <Compile Include="Layers\BackgroundLayer.cs" />
+    <Compile Include="Layers\DrawingLayer.cs" />
+    <Compile Include="Layers\GridLayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\CursorCollection.cs" />
+    <Compile Include="Utils\MoveHelper.cs" />
+    <Compile Include="Utils\NodeMoveHelper.cs" />
+    <Compile Include="Utils\SelectionRectangle.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Utils\GDIWrapper\DrawingMode.cs" />
+    <Compile Include="Utils\HitUtil.cs" />
+    <Compile Include="Utils\Undo\EditCommandNodeMove.cs" />
+    <Compile Include="Utils\Undo\EditCommandMove.cs" />
+    <Compile Include="Utils\Undo\EditCommandRemove.cs" />
+    <Compile Include="Utils\Undo\EditCommandAdd.cs" />
+    <Compile Include="Utils\Undo\EditCommandBase.cs" />
+    <Compile Include="Utils\GDIWrapper\GDI.cs" />
+    <Compile Include="Utils\GDIWrapper\PenStyles.cs" />
+    <Compile Include="Utils\ScreenUtils.cs" />
+    <Compile Include="Utils\Undo\UndoRedoBuffer.cs" />
+    <Compile Include="Utils\GDIWrapper\XorGDI.cs" />
+    <Compile Include="Wrapper\LayerIdChangedEventArgs.cs" />
+    <Compile Include="Wrapper\RulerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Wrapper\RulerControl.Designer.cs">
+      <DependentUpon>RulerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wrapper\RulerDirection.cs" />
+    <Compile Include="Wrapper\ScaleChangedEventArgs.cs" />
+    <Compile Include="Wrapper\ToolStripDropdownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="CanvasControl\UCCanvas.resx">
+      <DependentUpon>UCCanvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrapper\DrawingComponent.resx">
+      <DependentUpon>DrawingComponent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wrapper\RulerControl.resx">
+      <DependentUpon>RulerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="CanvasControl\UCCanvas.StartPointAndLeadwire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CanvasControl\UUCanvas.InputDataDraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\hmove.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EditNode.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\node.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\polygon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\polygon_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundrect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSX.CommomModel\WSX.CommomModel.csproj">
+      <Project>{6aa1e300-8783-4a86-a242-cdef7a8e4f1b}</Project>
+      <Name>WSX.CommomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.GlobalData\WSX.GlobalData.csproj">
+      <Project>{3655a3c2-ac5f-4cbf-938c-2464c1cac559}</Project>
+      <Name>WSX.GlobalData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\coolpoint.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\micorconn.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\autoChamfer.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

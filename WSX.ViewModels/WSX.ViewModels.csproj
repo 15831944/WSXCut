@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37076C5B-DAF0-450F-A9F2-E567CBEB6030}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WSX.ViewModels</RootNamespace>
+    <AssemblyName>WSX.ViewModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Mvvm.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DispatcherService.cs" />
+    <Compile Include="Common\OperationStatus.cs" />
+    <Compile Include="CustomControl\Draw\CanvasViewModel.cs" />
+    <Compile Include="CustomControl\Menu\RibPageMachineViewModel.cs" />
+    <Compile Include="CustomControl\RightPanel\MachineCountViewModel.cs" />
+    <Compile Include="CustomControl\RightPanel\MachineViewModel.cs" />
+    <Compile Include="CustomControl\RightPanel\ManualViewModel.cs" />
+    <Compile Include="CustomControl\UCLogDetailViewModel.cs" />
+    <Compile Include="CustomControl\UCStatusBarInfoViewModel.cs" />
+    <Compile Include="Forms\FrmCircleViewModel.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Model\CanvasOperModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\ViewModelExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WSX.CommomModel\WSX.CommomModel.csproj">
+      <Project>{6aa1e300-8783-4a86-a242-cdef7a8e4f1b}</Project>
+      <Name>WSX.CommomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.DrawService\WSX.DrawService.csproj">
+      <Project>{4CEDAF2A-152C-4824-866B-075969170D8E}</Project>
+      <Name>WSX.DrawService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Engine\WSX.Engine.csproj">
+      <Project>{A93D8F75-BB71-490B-9D38-7950EC9D4808}</Project>
+      <Name>WSX.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.GlobalData\WSX.GlobalData.csproj">
+      <Project>{3655A3C2-AC5F-4CBF-938C-2464C1CAC559}</Project>
+      <Name>WSX.GlobalData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Hardware.Ethernet\WSX.Hardware.Ethernet.csproj">
+      <Project>{4A28D6E9-1A03-4594-ACC6-810CE6078CE6}</Project>
+      <Name>WSX.Hardware.Ethernet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Logger\WSX.Logger.csproj">
+      <Project>{7EE3268A-3F81-43DD-8026-6106A1008F66}</Project>
+      <Name>WSX.Logger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,25 @@
+{
+  "IpAddress": "127.0.0.1",
+  "Port": 10121,
+  "XPara": {
+    "Ratio": 1000.0,
+    "Distance": 300.0,
+    "Reversed": true
+  },
+  "YPara": {
+    "Ratio": 1000.0,
+    "Distance": 600.0,
+    "Reversed": true
+  },
+  "ZPara": {
+    "Ratio": 200.0,
+    "Distance": 100.0,
+    "Reversed": false
+  },
+  "Blowing1_Pin": 1,
+  "Blowing2_Pin": 2,
+  "MaxSpeed": 200.0,
+  "MaxFrequency": 10000.0,
+  "MinSpeed": 20.0,
+  "SpeedThreshold": 60.0
+}

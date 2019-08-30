@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE6225C5-94A9-4FB1-B443-7569CDD22658}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WSX.WSXCut</RootNamespace>
+    <AssemblyName>WSXCut</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\WSXCut_Complete\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Images.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.2.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.2.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.2.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.2.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.2">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.2.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternPackage\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\Forms\FrmCommonSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCommonSide.Designer.cs">
+      <DependentUpon>FrmCommonSide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmAutoCoolingPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmAutoCoolingPoint.Designer.cs">
+      <DependentUpon>FrmAutoCoolingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCompensation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCompensation.Designer.cs">
+      <DependentUpon>FrmCompensation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmFigureSizeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmFigureSizeSet.Designer.cs">
+      <DependentUpon>FrmFigureSizeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmReleaseOrSmoothing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmReleaseOrSmoothing.Designer.cs">
+      <DependentUpon>FrmReleaseOrSmoothing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\BootstrapManager.cs" />
+    <Compile Include="Manager\FileManager.cs" />
+    <Compile Include="Manager\LoggerManager.cs" />
+    <Compile Include="Models\InitStep.cs" />
+    <Compile Include="Models\VersionInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Localization\English.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>English.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Localization\SimpleChinese.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SimpleChinese.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Localization\TraditionalChines.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TraditionalChines.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\FigureHelper.cs" />
+    <Compile Include="Views\CustomControl\Draw\CanvasWrapper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\Draw\CanvasWrapper.Designer.cs">
+      <DependentUpon>CanvasWrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\Draw\FigureFilePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\Draw\FigureFilePreview.Designer.cs">
+      <DependentUpon>FigureFilePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\Menu\ComboHeadBarSubItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\Menu\RibPageMachine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\Menu\RibPageMachine.Designer.cs">
+      <DependentUpon>RibPageMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\RightPanel\UCMachineCount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\RightPanel\UCMachineCount.Designer.cs">
+      <DependentUpon>UCMachineCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\RightPanel\UCMannual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\RightPanel\UCMannual.Designer.cs">
+      <DependentUpon>UCMannual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\UCStatusBarInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\UCStatusBarInfo.Designer.cs">
+      <DependentUpon>UCStatusBarInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayAnnular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayAnnular.Designer.cs">
+      <DependentUpon>FrmArrayAnnular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayFull.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayFull.Designer.cs">
+      <DependentUpon>FrmArrayFull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayInteractive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayInteractive.Designer.cs">
+      <DependentUpon>FrmArrayInteractive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayRectangle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArrayRectangle.Designer.cs">
+      <DependentUpon>FrmArrayRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmBridging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmBridging.Designer.cs">
+      <DependentUpon>FrmBridging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCircleConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCircleConfig.Designer.cs">
+      <DependentUpon>FrmCircleConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCircleRelaceToAcnode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCircleRelaceToAcnode.Designer.cs">
+      <DependentUpon>FrmCircleRelaceToAcnode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmConnectKnife.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmConnectKnife.Designer.cs">
+      <DependentUpon>FrmConnectKnife.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCutUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCutUp.Designer.cs">
+      <DependentUpon>FrmCutUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMachineCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMachineCount.Designer.cs">
+      <DependentUpon>FrmMachineCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMergeConnectLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMergeConnectLine.Designer.cs">
+      <DependentUpon>FrmMergeConnectLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmDeleteSmallFigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmDeleteSmallFigure.Designer.cs">
+      <DependentUpon>FrmDeleteSmallFigure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCurveSmoothing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmCurveSmoothing.Designer.cs">
+      <DependentUpon>FrmCurveSmoothing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArcFlyingCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmArcFlyingCut.Designer.cs">
+      <DependentUpon>FrmArcFlyingCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmLineFlyingCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmLineFlyingCut.Designer.cs">
+      <DependentUpon>FrmLineFlyingCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMultiContourConnectCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMultiContourConnectCut.Designer.cs">
+      <DependentUpon>FrmMultiContourConnectCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmAutoLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmAutoLayout.Designer.cs">
+      <DependentUpon>FrmAutoLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmFillets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmFillets.Designer.cs">
+      <DependentUpon>FrmFillets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmGapOrOverCutSizeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmGapOrOverCutSizeSet.Designer.cs">
+      <DependentUpon>FrmGapOrOverCutSizeSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMicroConnectParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmMicroConnectParams.Designer.cs">
+      <DependentUpon>FrmMicroConnectParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmAutoMicroConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmAutoMicroConnect.Designer.cs">
+      <DependentUpon>FrmAutoMicroConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmDockPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmDockPosition.Designer.cs">
+      <DependentUpon>FrmDockPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmRingCut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmRingCut.Designer.cs">
+      <DependentUpon>FrmRingCut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmStartup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmStartup.Designer.cs">
+      <DependentUpon>FrmStartup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmLayerConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmLayerConfig.Designer.cs">
+      <DependentUpon>FrmLayerConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\Operation\UCLayerParaBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\Operation\UCLayerParaBar.Designer.cs">
+      <DependentUpon>UCLayerParaBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\RightPanel\UCMachineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\RightPanel\UCMachineControl.Designer.cs">
+      <DependentUpon>UCMachineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomControl\UCLogDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CustomControl\UCLogDetail.Designer.cs">
+      <DependentUpon>UCLogDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmLineInOutParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmLineInOutParams.Designer.cs">
+      <DependentUpon>FrmLineInOutParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\FrmUserConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\FrmUserConfig.Designer.cs">
+      <DependentUpon>FrmUserConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm\MainView.Size.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Views\Forms\FrmCommonSide.resx">
+      <DependentUpon>FrmCommonSide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmAutoCoolingPoint.resx">
+      <DependentUpon>FrmAutoCoolingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmCompensation.resx">
+      <DependentUpon>FrmCompensation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmFigureSizeSet.resx">
+      <DependentUpon>FrmFigureSizeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmReleaseOrSmoothing.resx">
+      <DependentUpon>FrmReleaseOrSmoothing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Localization\English.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>English.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Localization\SimpleChinese.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SimpleChinese.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Localization\TraditionalChines.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TraditionalChines.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\Draw\CanvasWrapper.resx">
+      <DependentUpon>CanvasWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\Draw\FigureFilePreview.resx">
+      <DependentUpon>FigureFilePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\Menu\RibPageMachine.resx">
+      <DependentUpon>RibPageMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\RightPanel\UCMachineCount.resx">
+      <DependentUpon>UCMachineCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\RightPanel\UCMannual.resx">
+      <DependentUpon>UCMannual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\UCStatusBarInfo.resx">
+      <DependentUpon>UCStatusBarInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmArrayAnnular.resx">
+      <DependentUpon>FrmArrayAnnular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmArrayFull.resx">
+      <DependentUpon>FrmArrayFull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmArrayInteractive.resx">
+      <DependentUpon>FrmArrayInteractive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmArrayRectangle.resx">
+      <DependentUpon>FrmArrayRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmBridging.resx">
+      <DependentUpon>FrmBridging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmCircleConfig.resx">
+      <DependentUpon>FrmCircleConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmCircleRelaceToAcnode.resx">
+      <DependentUpon>FrmCircleRelaceToAcnode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmConnectKnife.resx">
+      <DependentUpon>FrmConnectKnife.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmCutUp.resx">
+      <DependentUpon>FrmCutUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmMachineCount.resx">
+      <DependentUpon>FrmMachineCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmMergeConnectLine.resx">
+      <DependentUpon>FrmMergeConnectLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmDeleteSmallFigure.resx">
+      <DependentUpon>FrmDeleteSmallFigure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmCurveSmoothing.resx">
+      <DependentUpon>FrmCurveSmoothing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmArcFlyingCut.resx">
+      <DependentUpon>FrmArcFlyingCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmLineFlyingCut.resx">
+      <DependentUpon>FrmLineFlyingCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmMultiContourConnectCut.resx">
+      <DependentUpon>FrmMultiContourConnectCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmAutoLayout.resx">
+      <DependentUpon>FrmAutoLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmFillets.resx">
+      <DependentUpon>FrmFillets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmGapOrOverCutSizeSet.resx">
+      <DependentUpon>FrmGapOrOverCutSizeSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmMicroConnectParams.resx">
+      <DependentUpon>FrmMicroConnectParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmAutoMicroConnect.resx">
+      <DependentUpon>FrmAutoMicroConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmDockPosition.resx">
+      <DependentUpon>FrmDockPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmLayerConfig.resx">
+      <DependentUpon>FrmLayerConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\Operation\UCLayerParaBar.resx">
+      <DependentUpon>UCLayerParaBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\RightPanel\UCMachineControl.resx">
+      <DependentUpon>UCMachineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomControl\UCLogDetail.resx">
+      <DependentUpon>UCLogDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmLineInOutParams.resx">
+      <DependentUpon>FrmLineInOutParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmRingCut.resx">
+      <DependentUpon>FrmRingCut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmStartup.resx">
+      <DependentUpon>FrmStartup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\FrmUserConfig.resx">
+      <DependentUpon>FrmUserConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Configs\SysConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Views\MainForm\MainView.GeometryTransform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm\MainView.LeadInOrOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\CNC\" />
+    <Folder Include="Resources\Images\Draw\" />
+    <Folder Include="Resources\Images\Home\" />
+    <Folder Include="Resources\Images\Nest\" />
+    <Folder Include="Resources\Images\View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\RightPanel\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSX.CommomModel\WSX.CommomModel.csproj">
+      <Project>{6aa1e300-8783-4a86-a242-cdef7a8e4f1b}</Project>
+      <Name>WSX.CommomModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.ControlLibrary\WSX.ControlLibrary.csproj">
+      <Project>{19c61a00-314c-4c19-bb6e-b5b9d9569f74}</Project>
+      <Name>WSX.ControlLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.DataCollection\WSX.DataCollection.csproj">
+      <Project>{9565C886-1683-420E-B793-EE5A01EE7691}</Project>
+      <Name>WSX.DataCollection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.DrawService\WSX.DrawService.csproj">
+      <Project>{4cedaf2a-152c-4824-866b-075969170d8e}</Project>
+      <Name>WSX.DrawService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Engine\WSX.Engine.csproj">
+      <Project>{a93d8f75-bb71-490b-9d38-7950ec9d4808}</Project>
+      <Name>WSX.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.GlobalData\WSX.GlobalData.csproj">
+      <Project>{3655a3c2-ac5f-4cbf-938c-2464c1cac559}</Project>
+      <Name>WSX.GlobalData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Hardware.Ethernet\WSX.Hardware.Ethernet.csproj">
+      <Project>{4A28D6E9-1A03-4594-ACC6-810CE6078CE6}</Project>
+      <Name>WSX.Hardware.Ethernet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.Logger\WSX.Logger.csproj">
+      <Project>{7ee3268a-3f81-43dd-8026-6106a1008f66}</Project>
+      <Name>WSX.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSX.ViewModels\WSX.ViewModels.csproj">
+      <Project>{37076C5B-DAF0-450F-A9F2-E567CBEB6030}</Project>
+      <Name>WSX.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+    <Content Include="Assets\file.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\file2.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\file3.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\line.png" />
+    <None Include="Resources\Images\RightPanel\control_stop.png" />
+    <None Include="Resources\Images\RightPanel\control_start.png" />
+    <None Include="Resources\Images\RightPanel\control_pause.png" />
+    <None Include="Resources\Images\RightPanel\apply.png" />
+    <None Include="Resources\bk_menu.png" />
+    <None Include="Resources\Images\LayerBar\layer0.png" />
+    <None Include="Resources\group_16x16.png" />
+    <None Include="Resources\group_32x32.png" />
+    <None Include="Resources\group2_16x16.png" />
+    <None Include="Resources\group2_32x32.png" />
+    <Content Include="Resources\Images\RightPanel\off.png" />
+    <Content Include="Resources\Images\RightPanel\on.png" />
+    <Content Include="Resources\Images\Startup\logo.png" />
+    <Content Include="Resources\Images\Startup\start.png" />
+    <None Include="Resources\Images\RightPanel\mark6.png" />
+    <None Include="Resources\Images\RightPanel\mark5.png" />
+    <None Include="Resources\Images\RightPanel\mark4.png" />
+    <None Include="Resources\Images\RightPanel\mark3.png" />
+    <None Include="Resources\Images\RightPanel\mark2.png" />
+    <None Include="Resources\Images\RightPanel\mark1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
